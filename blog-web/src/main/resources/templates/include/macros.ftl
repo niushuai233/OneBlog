@@ -75,7 +75,7 @@
                 |
                 <a href="mailto:${config.authorEmail}" target="_blank" title="点击给我发邮件" rel="external nofollow"><i class="fa fa fa-envelope fa-fw"></i>邮箱联系</a>
                 |
-                <a href="${config.weibo}" target="_blank" title="点击查看我的微博" rel="external nofollow"><i class="fa fa fa-weibo fa-fw"></i>${weiboName}</a>
+                <a href="${config.github}" target="_blank" title="点击查看我的Github" rel="external nofollow"><i class="fa fa fa-github fa-fw"></i>Github</a>
             </div>
         </div>
     </div>
