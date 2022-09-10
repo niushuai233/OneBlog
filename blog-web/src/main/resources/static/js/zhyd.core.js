@@ -406,8 +406,20 @@
                 if(_tip.length === 0 || !_tip[0]) {
                     return false;
                 }
+                // 定义随机数
+                var getRandomIndex = function () {
+                    return parseInt(Math.random() * (_tip.length - 1), 10);
+                }
+                // 定义随机颜色
+                var getRandomColor = function() {
+                    return  '#' + (function(color){
+                        return (color +=  '0123456789abcdef'[Math.floor(Math.random()*16)])
+                        && (color.length == 6) ?  color : arguments.callee(color);
+                    })('');
+                }
                 var bubbleIndex = 0;
                 $('body').click(function (e) {
+
                     bubbleIndex = bubbleIndex >= _tip.length ? 0 : bubbleIndex;
                     if (!e.originalEvent) {
                         return;
@@ -418,9 +430,9 @@
                     var $box = $(html).appendTo($(this));
                     $box.effectBubble({
                         y: -100,
-                        className: 'thumb-bubble',
+                        className: '',
                         fontSize: 0.5,
-                        content: '<i class="fa fa-smile-o"></i>' + _tip[bubbleIndex]
+                        content: '<font style="color: ' + getRandomColor() + ';"><i class="fa fa-smile-o"></i>' + _tip[getRandomIndex()] + '</font>'
                     });
                     setTimeout(function () {
                         $box.remove();
